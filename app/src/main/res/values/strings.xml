@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">MediAlert</string>
+
+    <string-array name="medicine_types">
+        <item>--select--</item>
+        <item>Capsules</item>
+        <item>Liquid</item>
+        <item>Tablet</item>
+        <item>Injection</item>
+        <item>Inhaler</item>
+    </string-array>
+
+    <string-array name="duration">
+        <item>--select--</item>
+        <item>hours</item>
+        <item>days</item>
+        <item>months</item>
+    </string-array>
+</resources>

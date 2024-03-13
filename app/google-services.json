@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "472424875126",
+    "project_id": "medical-reminder-app-b3f67",
+    "storage_bucket": "medical-reminder-app-b3f67.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:472424875126:android:ca1cd3a7085745404f4b57",
+        "android_client_info": {
+          "package_name": "com.example.medialert"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_F1g6_KG6fTLmiNcpS1i-2WcaV35YKNs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
