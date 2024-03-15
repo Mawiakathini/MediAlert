@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             app:cardCornerRadius="10dp"
-            android:onClick="moveToHome"
+            android:onClick="openLogin"
             app:cardBackgroundColor="#2196F3"
             >
 

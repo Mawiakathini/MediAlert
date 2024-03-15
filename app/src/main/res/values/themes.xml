@@ -8,5 +8,6 @@
     <style name="Theme.MediAlert" parent="Base.Theme.MediAlert" >
         <item name="fontFamily">@font/ubunturegular</item>
         <item name="windowNoTitle">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
     </style>
 </resources>
