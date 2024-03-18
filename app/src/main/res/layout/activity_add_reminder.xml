@@ -5,8 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="10dp"
     tools:context=".AddReminder">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="New Reminder"
+        />
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:id="@+id/saveReminderProgress"
+        android:padding="5dp"
+        android:visibility="gone"
+        />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -21,16 +35,8 @@
 
             android:orientation="vertical">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:text="New Reminder"
-                android:textSize="25sp"
-                android:textStyle="bold" />
-
-
             <TimePicker
+
                 android:id="@+id/picker"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
@@ -53,6 +59,7 @@
                     android:padding="5dp">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/medicineName"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Paracetamol" />
@@ -78,24 +85,27 @@
                     android:orientation="horizontal">
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="5"
+                        android:layout_weight="3"
                         android:padding="5dp">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:inputType="number"
+                            android:id="@+id/dose"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Paracetamol" />
+                            android:hint="5" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
 
                     <Spinner
-                        android:id="@+id/spinner"
+                        android:padding="10dp"
+                        android:id="@+id/doseSpinner"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="3" />
+                        />
                 </LinearLayout>
             </LinearLayout>
 
@@ -117,12 +127,14 @@
                     android:orientation="horizontal">
 
                     <RadioButton
+                        android:id="@+id/beforeMeal"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="5"
                         android:text="Before meal" />
 
                     <RadioButton
+                        android:id="@+id/afterMeal"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="5"
@@ -149,22 +161,27 @@
                     android:orientation="horizontal">
 
                     <RadioGroup
+                        android:id="@+id/frequencyGroup"
+                        android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
                         <RadioButton
+                            android:id="@+id/once"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="5"
                             android:text="Once" />
 
                         <RadioButton
+                            android:id="@+id/twice"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="5"
                             android:text="2 times" />
 
                         <RadioButton
+                            android:id="@+id/thrice"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="5"
@@ -193,25 +210,27 @@
                     android:orientation="horizontal">
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="5"
+                        android:layout_weight="3"
                         android:padding="5dp">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/duration"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Paracetamol"
+                            android:hint="5"
                             android:inputType="number" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
 
                     <Spinner
+                        android:padding="10dp"
                         android:id="@+id/durationSpinner"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="3" />
+                        />
 
                 </LinearLayout>
             </LinearLayout>
