@@ -49,9 +49,10 @@ public class Notificationhelper {
         NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
 
         Intent intent = new Intent(context, HomeScreen.class);
-	intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP); // Ensure only one instance of HomeScreen
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP); // Ensure only one instance of HomeScreen
         PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 
+        AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, CHANNEL_ID)
                 .setSmallIcon(R.drawable.logo)
@@ -60,11 +61,29 @@ public class Notificationhelper {
                 .setContentIntent(pendingIntent)
                 .setAutoCancel(true);
 
+        // Set up alarm to ring
+        Intent alarmIntent = new Intent(context, AlarmReciever.class); // Assuming you have an AlarmService class to handle the alarm
+        PendingIntent alarmPendingIntent = PendingIntent.getService(context, 0, alarmIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             NotificationChannel channel = new NotificationChannel(CHANNEL_ID, CHANNEL_NAME, NotificationManager.IMPORTANCE_HIGH);
             notificationManager.createNotificationChannel(channel);
         }
-	builder.setPriority(NotificationCompat.PRIORITY_HIGH);
+        builder.setPriority(NotificationCompat.PRIORITY_HIGH);
+        if (alarmManager != null) {
+            // Set alarm to ring immediately
+            alarmManager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), alarmPendingIntent);
+        }
         notificationManager.notify(NOTIFICATIONS_ID, builder.build());
+    }
+
+    public static void cancelNotification(Context context) {
+        Intent intent = new Intent(context, AlarmReciever.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(context, ALARM_REQUEST_CODE, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+        if (alarmManager != null) {
+            alarmManager.cancel(pendingIntent);
+        }
     }
 }

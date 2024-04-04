@@ -62,7 +62,7 @@
                         android:id="@+id/medicineName"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Paracetamol" />
+                        />
 
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
@@ -95,7 +95,7 @@
                             android:id="@+id/dose"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="5" />
+                            />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -219,7 +219,6 @@
                             android:id="@+id/duration"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="5"
                             android:inputType="number" />
 
                     </com.google.android.material.textfield.TextInputLayout>

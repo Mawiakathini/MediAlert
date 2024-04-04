@@ -82,10 +82,10 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true" />
+<!--            <CheckBox-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_alignParentEnd="true" />-->
 
 
         </RelativeLayout>
@@ -95,6 +95,7 @@
             android:layout_height="wrap_content"
             app:cardBackgroundColor="#FFDDDDDD"
             app:cardCornerRadius="10dp"
+            android:id="@+id/doneButton"
             android:layout_margin="10dp">
 
             <TextView
